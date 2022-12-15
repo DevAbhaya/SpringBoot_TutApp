@@ -3,6 +3,7 @@ package com.example.articledetails.service;
 import com.example.articledetails.dao.ArticleDao;
 import com.example.articledetails.model.Article;
 import org.elasticsearch.common.inject.Inject;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -14,7 +15,7 @@ import java.util.Optional;
 @Transactional
 public class ArticleServiceImpl implements ArticleService{
 
-    @Inject
+    @Autowired
     private ArticleDao articleDao;
 
     private Integer articleIncrementCounter;
