@@ -17,7 +17,7 @@ import java.util.List;
         consumes = "application/json"
 )
 public class ArticleController {
-    @Inject
+    @Autowired
     private ArticleService articleService;
 
     @GetMapping("/{articleId}")
