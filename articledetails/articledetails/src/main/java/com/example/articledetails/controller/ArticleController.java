@@ -4,12 +4,10 @@ import com.example.articledetails.model.Article;
 import com.example.articledetails.service.ArticleService;
 import org.elasticsearch.common.inject.Inject;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.data.domain.Pageable;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.server.ResponseStatusException;
 
-import java.io.IOException;
 import java.util.List;
 
 @RestController
@@ -19,7 +17,7 @@ import java.util.List;
         consumes = "application/json"
 )
 public class ArticleController {
-    @Autowired
+    @Inject
     private ArticleService articleService;
 
     @GetMapping("/{articleId}")
@@ -56,7 +54,7 @@ public class ArticleController {
         articleService.updateArticle(article);
     }
 
-    @DeleteMapping("/{studentId}")
+    @DeleteMapping("/{articleId}")
     public void deleteArticle(@PathVariable ("articleId") String articleId){
         articleService.deleteArticle(articleId);
     }
